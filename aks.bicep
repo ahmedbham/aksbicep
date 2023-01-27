@@ -1,6 +1,6 @@
 // mandatory params
 @description('The unique DNS prefix for your cluster, such as myakscluster. This cannot be updated once the Managed Cluster has been created.')
-param dnsPrefix string = resourceGroup().name // name is obtained from env
+param dnsPrefix string = 'oidc-rg' // name is obtained from env
 
 @description('The administrator username to use for Linux VMs.')
 param linuxAdminUsername string
