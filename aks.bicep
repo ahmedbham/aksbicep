@@ -38,6 +38,9 @@ param agentVMSize string = 'Standard_DS2_v2'
 resource aks 'Microsoft.ContainerService/managedClusters@2022-09-02-preview' = {
   name: uniqueclustername
   location: location
+  identity: {
+    type: 'SystemAssigned'
+  }
   properties: {
     dnsPrefix: dnsPrefix
     agentPoolProfiles: [
