@@ -25,7 +25,7 @@ param location string = resourceGroup().location
 @minValue(0)
 @maxValue(1023)
 @description('OS Disk Size in GB to be used to specify the disk size for every machine in the master/agent pool. If you specify 0, it will apply the default osDisk size according to the vmSize specified.')
-param osDiskSizeGB int = 20
+param osDiskSizeGB int = 30
 
 @minValue(1)
 @maxValue(50)
