@@ -36,9 +36,9 @@ jobs:
         failOnStdErr: false
    
    # install kubelogin
-    - name: Install kubelogin
-      run: |
-        brew install Azure/kubelogin/kubelogin
+    # - name: Install kubelogin
+    #   run: |
+    #     brew install Azure/kubelogin/kubelogin
    
    # install aks-cli
     - name: Install AKS CLI
