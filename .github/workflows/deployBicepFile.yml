@@ -34,7 +34,17 @@ jobs:
         template: ./aks.bicep
         parameters: ./azuredeploy.parameters.json
         failOnStdErr: false
-
+   
+   # install kubelogin
+    - name: Install kubelogin
+      run: |
+        brew install Azure/kubelogin/kubelogin
+   
+   # install aks-cli
+    - name: Install AKS CLI
+      run: |
+        az aks install-cli
+     
    # Set the target Azure Kubernetes Service (AKS) cluster. 
     - uses: azure/aks-set-context@v3
       with:
