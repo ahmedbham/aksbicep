@@ -1,9 +1,9 @@
 on: [push]
 env:
-  CLUSTER_NAME: ${{ secrets.AZURE_RG }}
-  CLUSTER_RESOURCE_GROUP: ${{ secrets.AZURE_RG }}
-  NAMESPACE: ${{ secrets.AZURE_RG }}
-  APP_NAME: ${{ secrets.AZURE_RG }}
+  CLUSTER_NAME: ${{ secrets.CLUSTER_NAME }}
+  CLUSTER_RESOURCE_GROUP: ${{ secrets.CLUSTER_RESOURCE_GROUP }}
+  NAMESPACE: ${{ secrets.NAMESPACE }}
+  APP_NAME: ${{ secrets.APP_NAME }}
 
   name: Azure ARM
 permissions:
@@ -30,7 +30,7 @@ jobs:
       uses: azure/arm-deploy@v1
       with:
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-        resourceGroupName: ${{ secrets.AZURE_RG }}
+        resourceGroupName: ${{ secrets.CLUSTER_RESOURCE_GROUP }}
         template: ./aks.bicep
         parameters: ./azuredeploy.parameters.json
         failOnStdErr: false

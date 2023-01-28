@@ -1,6 +1,6 @@
 // mandatory params
 @description('The unique DNS prefix for your cluster, such as myakscluster. This cannot be updated once the Managed Cluster has been created.')
-param dnsPrefix string = 'oidc-rg' // name is obtained from env
+param dnsPrefix string = resourceGroup().name // name is obtained from env
 
 @description('The administrator username to use for Linux VMs.')
 param linuxAdminUsername string
@@ -12,7 +12,7 @@ param sshRSAPublicKey string = 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDQAuD+1JUF
 // param servicePrincipalClientId string
 
 @description('The unique name for the AKS cluster, such as myAKSCluster.')
-param uniqueclustername string = resourceGroup().name
+param uniqueclustername string = 'aksbicep'
 
 // @secure()
 // @description('The secret password associated with the service principal.')
